@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            display: flex;
+        }
+
+        .in {
+            display: flex;
+
+            border: solid 2px;
+            color: black;
+            margin: 5px;
+            padding: 20px;
+            background: setColor();
+        }
+
+        img {
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+
+
+
+
+        let x = prompt('Введите количество блоков ');
+        let y = prompt('Введите номер картинки ');
+
+        let block = '';
+        for (i = 1; i <= x; i++) {
+            function setColor() {
+
+                let colors = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+                let s = '#';
+                for (i = 0; i < 6; i++) {
+                    item = Math.floor(Math.random() * colors.length);
+                    s += colors[item];
+                }
+                return s;
+            }
+            block += `<div class="in" style = "background: ${setColor()}"><img src="images/${y}.jpg" alt=""></div>`;
+
+
+
+        }
+        box.innerHTML = block;
+
+    </script>
+
+</body>
+
+</html>
